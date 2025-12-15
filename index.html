@@ -1,12 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Detour - Homepage</title>
-    <link rel="stylesheet" href="/assets/css/stylesheet.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
+
 <body>
-    
+    <header class="site-header">
+        <nav class="navbar" aria-label="Primary">
+            <a href="#" class="navbar__brand" aria-label="Home">
+                <img src="assets/images/logo.png" alt="Your Detour site logo" class="navbar__logo">
+            </a>
+            <button class="navbar__burger" type="button" aria-label="Open Burger Menu">
+                <img src="assets/images/icon-burger.svg" alt="" class="navbar__icon" aria-hidden="true">
+            </button>
+            <div class="navbar__links" aria-label="Desktop navigation">
+                <a class="navbar__link" href="#">Generate a route</a>
+                <a class="navbar__link" href="explore.html">Explore the city</a>
+                <a class="navbar__link" href="#">My bookmarks</a>
+            </div>
+        </nav>
+        <div class="nav-menu" hidden>
+            <a href="#" class="nav-menu__link">Generate a route</a>
+            <a href="explore.html" class="nav-menu__link">Explore the city</a>
+            <a href="#" class="nav-menu__link">My bookmarks</a>
+        </div>
+    </header>
+
+    <main class="stage">
+        <div class="content">
+            <img src="assets/images/full-logo.png" alt="Your Detour Full Logo" class="hero-logo">
+            <section class="city" aria-labelledby="city-title">
+                <h1 id="city-title" class="sr-only">Choose a city</h1>
+                <label for="city-select" class="city__label">Choose a city:</label>
+                <select name="city" id="city-select" class="city__select">
+                    <option value="" selected>Select City</option>
+                    <option value="aalborg">Aalborg</option>
+                </select>
+            </section>
+
+            <section class="home" aria-labelledby="home-title" hidden>
+                <h2 class="home__city" id="home-title">AALBORG</h2>
+
+                <p class="home__change">
+                    <a href="#" class="home__change-link">Change the city</a>
+                </p>
+
+                <div class="home__actions">
+                    <a href="#" class="btn">
+                        <span class="btn__text">Generate a route</span>
+                        <img src="assets/images/icon-route.svg" alt="" class="btn__icon" aria-hidden="true">
+                    </a>
+
+                    <a href="explore.html" class="btn">
+                        <span class="btn__text">Explore the city</span>
+                        <img src="assets/images/icon-explore.svg" alt="" class="btn__icon" aria-hidden="true">
+                    </a>
+
+                    <a href="#" class="btn">
+                        <span class="btn__text">My bookmarks</span>
+                        <img src="assets/images/icon-bookmark.svg" alt="" class="btn__icon" aria-hidden="true">
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" aria-label="Footer">
+        <div class="footer__inner">
+            <div class="footer__col footer__col--left">
+                <a href="#" class="footer__link">Having troubles? Contact Us</a>
+            </div>
+
+            <div class="footer__col footer__col--center">
+                <a href="#" class="footer__link" id="footer-change-city"><u><i>Click here to change the city</i></u></a>
+            </div>
+
+            <div class="footer__col footer__col--right">
+                <span class="footer__text">Copyright © Hidden Places 2025</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>

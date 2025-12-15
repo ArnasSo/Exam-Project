@@ -1,0 +1,445 @@
+@font-face {
+    font-family: "DIN Eng";
+    src: url("../fonts/DIN-Eng.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "DIN Mittel";
+    src: url("../fonts/DIN-Mittel.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, Arial, sans-serif;
+
+    /* Gradient ONLY */
+    background: linear-gradient(180deg, #C96A42 0%, #993626 100%);
+    position: relative;
+    overflow-x: hidden;
+}
+
+body.city-selected::before {
+    opacity: 0.6;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: url("../images/bg-mobile.png") center bottom / cover no-repeat;
+
+    opacity: 1;
+    transition: opacity 0.3s ease;
+
+    z-index: -1;
+}
+
+/* Start of Navigation Bar CSS */
+header {
+    background-color: #0062A3;
+}
+
+.site-header {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+.navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 16px;
+}
+
+.navbar__logo {
+    height: 44px;
+    width: auto;
+    display: block;
+}
+
+.navbar__burger {
+    height: 44px;
+    width: 44px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.navbar__links {
+    display: none;
+}
+
+.navbar__link {
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Montserrat", system-ui, Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 22px;
+}
+
+/* End of Navigation Bar CSS */
+
+.stage {
+    min-height: calc(100vh - 60px);
+    padding: 0 16px;
+}
+
+.content {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 60px);
+}
+
+.hero-logo {
+    width: 280px;
+    height: 168px;
+    display: block;
+    margin: 50px auto 0 auto;
+}
+
+/* Start of City Select section */
+.city {
+    margin-top: 30px;
+    display: grid;
+    gap: 10px;
+    justify-items: center;
+}
+
+.city__label {
+    font-weight: 600;
+    font-size: 25px;
+    color: #FFFFFF;
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+.city__select {
+    width: 280px;
+    height: 44px;
+    border-radius: 10px;
+    border: 0;
+    padding-left: 12px;
+    padding-right: 40px;
+    color: #000000;
+    font-size: 18px;
+    font-family: "Montserrat", system-ui, Arial, sans-serif;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* End of City Select section */
+
+/* Start of City Selected */
+.home {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-height: 0;
+}
+
+.home__city {
+    margin: 0;
+    font-size: 40px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.1px #000000;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 10px;
+    font-family: "DIN Mittel", system-ui, Arial, sans-serif;
+}
+
+.home__city::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    height: 3px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 2px;
+}
+
+.home__change {
+    margin: 0;
+}
+
+.home__change-link {
+    color: #fff;
+    text-decoration: underline;
+    font-family: "Montserrat", system-ui, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.home__actions {
+    margin-top: auto;
+    padding-bottom: 80px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+/* End of City Selected */
+
+/* Start of Reusable button component */
+.btn {
+    width: 250px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background-color: #4F8FB8;
+    color: #FFFFFF;
+    font-size: 16px;
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    box-shadow: 0 14px 14px #4E4E4E;
+}
+
+.btn__icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.btn__text,
+.nav-menu__link {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Montserrat", system-ui, Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+/* End of Reusable button component */
+
+/* Start of Mobile navigation menu */
+.nav-menu {
+    background-color: #0062A3;
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px 20px 16px;
+    gap: 20px;
+}
+
+.nav-menu__link {
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.site-footer {
+    display: none;
+}
+
+.page-title {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.page-title__kicker {
+  margin: 0;
+  color: #FFFFFF;
+  font-family: "Montserrat", system-ui, Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.page-title__city {
+  margin: 6px 0 0 0;
+  font-size: 36px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.1px #000000;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px;
+  font-family: "DIN Mittel", system-ui, Arial, sans-serif;
+}
+
+.page-title__city::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  height: 3px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 2px;
+}
+
+body.no-bg-image::before {
+  display: none;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (min-width: 431px) {
+    body::before {
+        background-image: url("../images/bg-desktop.png");
+    }
+
+    .site-footer {
+        display: block;
+        height: 60px;
+        background-color: #4F8FB8;
+        color: #FFFFFF;
+        width: 100%;
+    }
+
+    .footer__inner {
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 24px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+    }
+
+    .footer__col--left {
+        text-align: left;
+    }
+
+    .footer__col--center {
+        text-align: center;
+    }
+
+    .footer__col--right {
+        text-align: right;
+    }
+
+    .footer__link,
+    .footer__text {
+        color: #FFFFFF;
+        font-family: "Montserrat", system-ui, Arial, sans-serif;
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+    .footer__link:hover {
+        text-decoration: underline;
+    }
+
+    /* Important: make room for footer so content doesn't get covered */
+    .content {
+        min-height: calc(100vh - 80px - 60px);
+    }
+
+    .navbar__burger {
+        display: none;
+    }
+
+    .nav-menu {
+        display: none !important;
+        /* just in case it's open */
+    }
+
+    .navbar {
+        justify-content: flex-start;
+        gap: 28px;
+    }
+
+    .navbar__links {
+        display: flex;
+        gap: 48px;
+        margin-left: auto;
+        /* pushes links to the right */
+        padding-right: 16px;
+        align-items: center;
+    }
+
+    .home__change {
+        display: none;
+    }
+
+    .hero-logo {
+        width: 400px;
+        height: 237px;
+    }
+
+    .home__city {
+        font-size: 50px;
+    }
+
+    .btn {
+        width: 320px;
+        height: 60px;
+    }
+
+    .btn__icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .btn__text {
+        font-size: 20px;
+    }
+}

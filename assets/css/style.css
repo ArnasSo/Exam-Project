@@ -766,7 +766,7 @@ body.no-bg-image::before {
     display: none !important;
 }
 
-@media (min-width: 431px) {
+@media (min-width: 480px) {
     body::before {
         background-image: url("../images/bg-desktop.png");
     }

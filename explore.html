@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,13 +35,90 @@
 
   <main class="stage">
     <div class="content">
-      <!-- Page title block -->
       <section class="page-title" aria-labelledby="page-title">
         <p class="page-title__kicker">Explore the City:</p>
         <h1 class="page-title__city" id="page-title">AALBORG</h1>
       </section>
 
-      <!-- Cards will go here next step -->
+      <section class="cards" aria-label="Places">
+        <!-- card 1 -->
+        <article class="place-card">
+          <a class="place-card__link" href="nordkraft.html" aria-label="Nordkraft details">
+            <div class="place-card__media place-card__media--nordkraft"></div>
+
+            <div class="place-card__panel">
+              <img class="place-card__bookmark" src="assets/images/icon-bookmark-card.svg" alt="" />
+
+              <h2 class="place-card__title">NORDKRAFT</h2>
+              <p class="place-card__subtitle">Explore cultural spaces, today.</p>
+
+              <p class="place-card__meta">
+                <strong>Opening Hours:</strong><br>
+                Mon-Fri 11:00-18:00
+              </p>
+
+              <p class="place-card__more">Click to learn more</p>
+            </div>
+
+            <div class="place-card__logo">
+              <img src="assets/images/logo-nordkraft.png"
+                alt="Nordkraft logo, Source: https://nordkraft.dk/forside.aspx">
+            </div>
+          </a>
+        </article>
+        <!-- card 2 -->
+        <article class="place-card">
+          <a class="place-card__link" href="#">
+            <div class="place-card__media place-card__media--utzon"
+              aria-label="Image of Utzon Center at night, source: https://www.troldtekt.dk/temaer/utzon/"></div>
+
+            <div class="place-card__panel">
+              <img class="place-card__bookmark" src="assets/images/icon-bookmark-card.svg" alt="" />
+
+              <h2 class="place-card__title">UTZON CENTER</h2>
+              <p class="place-card__subtitle">Exhibitions and workshops</p>
+
+              <p class="place-card__meta">
+                <strong>Opening Hours:</strong><br>
+                Mon-Fri 10:00-18:00
+              </p>
+
+              <p class="place-card__more">Click to learn more</p>
+            </div>
+
+            <div class="place-card__logo">
+              <img src="assets/images/logo-utzon.png" alt="Utzon Center logo, Source: https://utzoncenter.dk/">
+            </div>
+          </a>
+        </article>
+        <!-- card 3-->
+        <article class="place-card">
+          <a class="place-card__link" href="#">
+            <div class="place-card__media place-card__media--streetart"
+              aria-label="Image of a mural, source: https://www.enjoynordjylland.com/north-jutland/plan-your-trip/street-art-out-open-bezt-absalonsgade-34-gdk1081810">
+            </div>
+
+            <div class="place-card__panel">
+              <img class="place-card__bookmark" src="assets/images/icon-bookmark-card.svg" alt="" />
+
+              <h2 class="place-card__title">STREET ART</h2>
+              <p class="place-card__subtitle">Where walls become canvas</p>
+
+              <p class="place-card__meta">
+                <strong>Murals:</strong><br>
+                More than 60 murals
+              </p>
+
+              <p class="place-card__more">Click to learn more</p>
+            </div>
+
+            <div class="place-card__logo">
+              <img src="assets/images/logo-nord.jpg" alt="Street art logo, Source: https://www.enjoynordjylland.com/ ">
+            </div>
+          </a>
+        </article>
+      </section>
+
     </div>
   </main>
 
@@ -51,7 +129,7 @@
       </div>
 
       <div class="footer__col footer__col--center">
-        <!-- optional on this page -->
+        <a href="index.html" class="footer__link" id="footer-change-city"><u><i>← Go Back</i></u></a>
       </div>
 
       <div class="footer__col footer__col--right">
@@ -62,4 +140,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

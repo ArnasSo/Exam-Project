@@ -476,6 +476,14 @@ body.no-bg-image::before {
     background-image: url("../images/nordkraft-hero.png");
 }
 
+.detail-hero--utzon {
+    background-image: url("../images/utzon-hero.png");
+}
+
+.detail-hero--streetart {
+    background-image: url("../images/streetart-hero.png");
+}
+
 .detail-hero::before {
     content: "";
     position: absolute;
@@ -557,7 +565,7 @@ body.no-bg-image::before {
 }
 
 .detail-info {
-    padding: 18px 16px;
+    padding-top: 15px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 14px;
@@ -608,6 +616,10 @@ body.no-bg-image::before {
     padding-bottom: 10px;
 }
 
+#openhours {
+    width: 100px;
+}
+
 .detail-info__list {
     margin: 0;
     padding: 0;
@@ -624,6 +636,7 @@ body.no-bg-image::before {
     text-decoration: underline;
     font-style: italic;
 }
+
 
 .detail-body {
     padding: 0 30px 28px;
@@ -667,6 +680,72 @@ body.no-bg-image::before {
     text-decoration: underline;
 }
 
+.detail-hero--utzon~.detail-info {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "hours   ongoing   facilities"
+        "hours   price     facilities"
+        "main    main      main";
+    row-gap: 6px;
+    column-gap: 14px;
+}
+
+.detail-hero--utzon~.detail-info .detail-info__block--hours {
+    grid-area: hours;
+}
+
+.detail-hero--utzon~.detail-info .detail-info__block--ongoing {
+    grid-area: ongoing;
+}
+
+.detail-hero--utzon~.detail-info .detail-info__block--price {
+    grid-area: price;
+}
+
+.detail-hero--utzon~.detail-info .detail-info__block--facilities {
+    grid-area: facilities;
+}
+
+.detail-hero--utzon~.detail-info .detail-info__block--main {
+    grid-area: main;
+}
+
+.detail-info--streetart {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "artist year mural"
+        "main   main main";
+}
+
+.detail-info--streetart .detail-info__block--artist {
+    grid-area: artist;
+}
+
+.detail-info--streetart .detail-info__block--year {
+    grid-area: year;
+}
+
+.detail-info--streetart .detail-info__block--mural {
+    grid-area: mural;
+}
+
+.detail-info--streetart .detail-info__block--main {
+    grid-area: main;
+}
+
+.detail-info--streetart .detail-info__text {
+    width: auto;
+    padding-bottom: 0;
+}
+
+.detail-gallery__title {
+    margin: 0 0 10px;
+    color: #FFFFFF;
+    font-family: "Montserrat", system-ui, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
 
 [hidden] {
     display: none !important;
@@ -847,7 +926,17 @@ body.no-bg-image::before {
     .detail-info {
         grid-template-columns: 1fr 2fr 1fr;
         grid-template-areas: "hours main facilities";
+        padding-top: 30px;
     }
+
+    .detail-hero--utzon+.detail-info {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "hours ongoing price facilities"
+            ".     main    main  .";
+    }
+
+
 
     .detail-info__text {
         font-size: 22px;
@@ -872,7 +961,7 @@ body.no-bg-image::before {
     }
 
     .detail-body__text {
-        margin: 5px auto 30px auto;
+        margin: 30px auto 30px auto;
         font-size: 18px;
     }
 
@@ -896,12 +985,40 @@ body.no-bg-image::before {
         font-size: 18px;
     }
 
-    .detail-info__block {
-        padding-top: 30px;
-    }
-
     .detail-hero__icons img {
         width: 49px;
         height: 49px;
+    }
+
+    #openhours {
+        width: auto;
+    }
+
+    .detail-info.detail-info--streetart {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "artist year mural"
+            "main   main main";
+    }
+
+    .detail-info.detail-info--streetart .detail-info__block--artist {
+        grid-area: artist;
+    }
+
+    .detail-info.detail-info--streetart .detail-info__block--year {
+        grid-area: year;
+    }
+
+    .detail-info.detail-info--streetart .detail-info__block--mural {
+        grid-area: mural;
+    }
+
+    .detail-info.detail-info--streetart .detail-info__block--main {
+        grid-area: main;
+    }
+
+
+    #mural-body-text {
+        margin: 30px 20%;
     }
 }

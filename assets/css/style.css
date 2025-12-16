@@ -637,7 +637,6 @@ body.no-bg-image::before {
     font-style: italic;
 }
 
-
 .detail-body {
     padding: 0 30px 28px;
 }
@@ -745,6 +744,22 @@ body.no-bg-image::before {
     font-size: 18px;
     font-weight: 600;
     text-align: center;
+}
+
+.detail-info--404 {
+    display: flex;
+    justify-content: center;
+}
+
+.detail-info--404 .detail-body__text {
+    text-align: center;
+    max-width: 420px;
+    margin-inline: auto;
+}
+
+.detail-info--404 .detail-body__link a {
+    font-size: 16px;
+    font-weight: 600;
 }
 
 [hidden] {
@@ -936,8 +951,6 @@ body.no-bg-image::before {
             ".     main    main  .";
     }
 
-
-
     .detail-info__text {
         font-size: 22px;
         width: 230px;
@@ -1016,7 +1029,6 @@ body.no-bg-image::before {
     .detail-info.detail-info--streetart .detail-info__block--main {
         grid-area: main;
     }
-
 
     #mural-body-text {
         margin: 30px 20%;
